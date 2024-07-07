@@ -28,9 +28,13 @@ const addUser = async (req, res) => {
     console.log("function called")
     if (userRegister) {
       return res.status(201).json({ message: "User registered successfully" });
-    } else return res.status(500).json({ message: "Cannot Register" });
+    } else {
+      console.log('User registration failed:', email);
+      return res.status(500).json({ message: "Cannot Register" });
+    }
   } catch (error) {
-    console.log(error)
+    console.log(email)
+    console.error('Error during user registration:', error);
     return res.status(500).json(error.message);
   }
 };
