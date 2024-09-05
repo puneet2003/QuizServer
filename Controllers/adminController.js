@@ -227,6 +227,5 @@ module.exports = {
   getAdmin,
   publishResult,
   adminUserHistory,
-  getLeaderBoard,
   checkResultPublished
 };
